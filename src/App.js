@@ -25,7 +25,7 @@ const App = () => {
       <div className="flex">
         {currentUser && <Sidebar currentUser={currentUser} />}
         <div className="flex-1 p-4">
-          <h1 className="text-3xl font-bold my-4">RBAC Management</h1>
+          <h1 className="text-3xl font-bold my-4">RBAC_ Management</h1>
           {!currentUser ? (
             <Login onLogin={handleLogin} />
           ) : (
