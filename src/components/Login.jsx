@@ -17,33 +17,31 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-2">Login</h2>
-      <div>
+    <div className="flex flex-col items-center p-4">
+      <h2 className="mb-4 text-xl font-bold">Login</h2>
+      <div className="w-80"> {/* Set fixed width */}
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="border p-2 mb-2 w-full"
+          className="w-full p-2 mb-2 border"
         />
-      </div>
-      <div>
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="border p-2 mb-2 w-full"
+          className="w-full p-2 mb-2 border"
         />
+        <button
+          onClick={handleLogin}
+          className="w-full px-4 py-2 text-white bg-blue-500 rounded"
+        >
+          Login
+        </button>
       </div>
-      <button
-        onClick={handleLogin}
-        className="bg-blue-500 text-white px-4 py-2 rounded w-full"
-      >
-        Login
-      </button>
-      {error && <p className="text-red-500 mt-2">{error}</p>}
+      {error && <p className="mt-4 text-red-500">{error}</p>} {/* Display error below the form */}
     </div>
   );
 };
